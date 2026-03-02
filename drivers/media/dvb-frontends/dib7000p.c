@@ -2221,10 +2221,11 @@ static int w7090p_tuner_read_serpar(struct i2c_adapter *i2c_adap, struct i2c_msg
 	u8 n_overflow = 1, n_empty = 1;
 	u16 i = 1000;
 	u16 serpar_num;
+	u16 read_word;
 	if (msg[0].len < 1 || msg[1].len < 2)
 		return -EOPNOTSUPP;
 	serpar_num = msg[0].buf[0];
-	u16 read_word;
+	
 
 	while (n_overflow == 1 && i) {
 		n_overflow = (dib7000p_read_word(state, 1984) >> 1) & 0x1;
