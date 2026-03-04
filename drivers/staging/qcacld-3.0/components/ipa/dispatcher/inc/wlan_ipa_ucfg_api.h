@@ -54,6 +54,7 @@ bool ucfg_ipa_is_present(void);
  *         false - ipa is not ready
  */
 bool ucfg_ipa_is_ready(void);
+bool qca_ipa_is_ready(void);
 
 /**
  * ucfg_ipa_is_enabled() - get IPA enable status
